@@ -9,6 +9,9 @@ end
 
 ---@return table
 function ESX.GetPlayerData()
+    if Config.CustomInventory == 'qs' then
+        ESX.PlayerData.inventory = LocalPlayer.state.inventory
+    end
     return ESX.PlayerData
 end
 

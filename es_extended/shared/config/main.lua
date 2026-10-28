@@ -13,7 +13,7 @@ Config.Locale = (esxLocale ~= "invalid") and esxLocale or (txAdminLocale ~= "cus
 Config.LocaleFallback = GetConvar("esx:localeFallback", "true") ~= "false"
 
 -- For ox inventory, this will automatically be adjusted, do not change! For other inventories, leave as false unless specifically instructed to change.
-Config.CustomInventory = false
+Config.CustomInventory = 'qs'
 
 Config.Accounts = {
     bank = {
@@ -123,9 +123,6 @@ Config.AdminLogging = false -- Logs the usage of certain commands by those with 
 -------------------------------------
 -- DO NOT CHANGE BELOW THIS LINE !!!
 -------------------------------------
-if GetResourceState("ox_inventory") ~= "missing" then
-    Config.CustomInventory = "ox"
-end
 
 Config.EnableDefaultInventory = Config.CustomInventory == false -- Display the default Inventory ( F2 )
 Config.Identifier = GetConvar("esx:identifier", "license")

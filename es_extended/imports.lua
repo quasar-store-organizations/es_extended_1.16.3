@@ -144,6 +144,12 @@ if not IsDuplicityVersion() then -- Only register this event for the client
         end
     end
 else
+    -- ESX.Items here is a copy taken when this resource started. es_extended
+    -- replaces its list when the inventory adds or changes items; keep it in step.
+    AddEventHandler("esx:itemsUpdated", function()
+        ESX.Items = ESX.GetItems()
+    end)
+
     ---@param src number
     ---@return StaticPlayer
     local function createStaticPlayer(src)
